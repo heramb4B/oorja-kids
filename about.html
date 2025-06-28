@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>KidsOorja</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/templatemo-digimedia-v1.css" />
+    <link rel="stylesheet" href="assets/css/animated.css" />
+    <link rel="stylesheet" href="assets/css/owl.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 80px;
+      }
+
+      .card {
+        width: 250px;
+        background-color: #fff;
+        border-radius: 20px;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* <-- Shadow effect */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* For hover effect */
+        position: relative;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+      }
+
+      .card.red {
+        background-color: #f44336;
+      }
+
+      .card.yellow {
+        background-color: #ffc107;
+        color: #333;
+      }
+
+      .card.green {
+        background-color: #8bc34a;
+      }
+
+      .card.blue {
+        background-color: #03a9f4;
+      }
+
+      .card img {
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 4px dashed white;
+        margin: 0 auto 15px;
+        position: relative;
+        margin-bottom: 55px;
+      }
+
+      .card h3 {
+        font-size: 1.2rem;
+        color: white;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        color: white;
+        font-size: 0.95rem;
+        line-height: 1.4;
+      }
+
+      @media (max-width: 768px) {
+        .card {
+          width: 90%;
+        }
+      }
+
+      .features-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+      }
+
+      .features-column {
+        flex: 1;
+        min-width: 300px;
+        max-width: 500px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 25px;
+      }
+
+      .feature-icon {
+        background-color: #6a1b9a;
+        color: white;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+
+      .feature-text {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 768px) {
+        .features-section {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      .bg-card-blue { background-color: #87CEEB; } /* Sky Blue */
+      .bg-card-green { background-color: #90EE90; } /* Light Green */
+      .bg-card-orange { background-color: #FFA07A; } /* Light Salmon */
+      .bg-card-pink { background-color: #FFB6C1; } /* Light Pink */
+      .bg-card-purple { background-color: #BA55D3; } /* Medium Orchid */
+      .bg-card-yellow { background-color: #FFD700; } /* Gold */
+      .bg-card-red { background-color: #FF6347; } /* Tomato */
+ .card-title {
+        font-family: 'Poppins', sans-serif; /* Poppins for titles */
+      }
+
+         /* ***** NEW CSS FOR ABOUT US SECTION ***** */
+      .about-us-content {
+        max-width: 900px; /* Limit width for readability */
+      }
+      .about-us-content h2 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700; /* Bold for the main heading */
+        color: #333; /* Darker color for prominence */
+      }
+      .about-us-content p {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.8; /* More spacing for readability */
+        color: #555; /* Slightly lighter for body text */
+        text-align: justify; /* Justify text for a clean block */
+      }
+
+      /* Consistent font for the entire body */
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .card-title, .section-heading h4, .section-heading h6 {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+      <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Pre-header Starts -->
+    <div class="pre-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-sm-8 col-7">
+            <ul class="info">
+              <li>
+                <a href="#"
+                  ><i class="fa fa-envelope"></i>contact@kidsoorja.com</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-phone"></i>+91 99999 9999</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-sm-4 col-5">
+            <ul class="social-media">
+              <li>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-behance"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-dribbble"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Pre-header End -->
+
+    <!-- ***** Header Area Start ***** -->
+    <header
+      class="header-area header-sticky wow slideInDown"
+      data-wow-duration="0.75s"
+      data-wow-delay="0s"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="main-nav">
+              <!-- ***** Logo Start ***** -->
+              <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="" style="height: 85px; margin-top: 8px;" />
+              </a>
+              <!-- ***** Logo End ***** -->
+              <!-- ***** Menu Start ***** -->
+              <ul class="nav">
+                <li class="scroll-to-section">
+                  <a href="index.html">Home</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="about.html" class="active">About</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="#services">Programs Offered</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="#services">Why Us?</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="#contact">Contact</a>
+                </li>
+                <li class="scroll-to-section"></li>
+              </ul>
+              <a class="menu-trigger">
+                <span>Menu</span>
+              </a>
+              <!-- ***** Menu End ***** -->
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** About Us Section Start ***** -->
+    <section class="about-us-section py-16 bg-white" style="margin-top: 6%;">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center">
+        <div class="about-us-content mx-auto">
+          <h2 class="text-4xl sm:text-5xl font-extrabold mb-8 text-gray-800">About Us</h2>
+          <p class="text-lg mb-4 text-gray-700">
+            Welcome to Kids Oorja – Where Learning Begins with Joy!
+            At Kids Oorja, we believe that every child is a spark of potential waiting to shine.
+            As a trusted preschool and daycare, our mission is to create a safe, nurturing, and
+            stimulating environment where young minds can explore, grow, and thrive.
+          </p>
+          <p class="text-lg mb-4 text-gray-700">
+            Founded with a deep passion for early childhood development, Kids Oorja offers a balanced blend
+            of structured learning, free play, and emotional support. Our age-appropriate curriculum is
+            thoughtfully designed to foster curiosity, creativity, confidence, and essential life skills
+            in a joyful and inclusive setting.
+          </p>
+          <p class="text-lg mb-4 text-gray-700">
+            Whether it's a baby’s first steps or a preschooler’s first story, we celebrate every
+            milestone with love and care. With trained educators, engaging activities, and a focus on
+            holistic development, Kids Oorja is not just a school — it’s your child’s second home.
+          </p>
+          <p class="text-lg text-gray-700 font-semibold italic">
+            Join us in lighting up your child’s journey with knowledge, kindness, and the power of early learning.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- ***** About Us Section End ***** -->
+
+    <!-- <div
+      class="main-banner wow fadeIn"
+      id="top"
+      data-wow-duration="1s"
+      data-wow-delay="0.5s"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6 align-self-center">
+                <div
+                  class="left-content show-up header-text wow fadeInLeft"
+                  data-wow-duration="1s"
+                  data-wow-delay="1s"
+                >
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <h6>More Than Just A Pre-School</h6>
+                      <h2>
+                        A safe, joyful start to your child’s learning journey
+                        begins here.
+                      </h2>
+                      <p>
+                        Experienced teachers, thoughtful curriculum, and a
+                        caring atmosphere — everything your little one needs to
+                        thrive.
+                      </p>
+                    </div>
+                    <div class="col-lg-12">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div
+                  class="right-image wow fadeInRight"
+                  data-wow-duration="1s"
+                  data-wow-delay="0.5s"
+                >
+                  <img src="assets/images/hmpg_img_1.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+ 
+    <div id="about" class="about section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="card-container">
+                <div class="card red">
+                 
+                  
+                  <img src="assets/images/card2.jpg" alt="Learn and Play" />
+                  
+                  <h3>Learn And Play</h3>
+                  <p>
+                    Learning with Play makes it a Fun-Filled and Lasting
+                    Experience.
+                  </p>
+                </div>
+
+                <div class="card yellow">
+                  <img src="assets/images/card1.jpg" alt="Safe & Nurturing" />
+                  <h3>Safe & Nurturing</h3>
+                  <p>
+                    Environment, Cozy Learning Corners and Ample Outdoor Spaces
+                    to provide a better learning experience to your kids.
+                  </p>
+                </div>
+
+                <div class="card green">
+                  <img
+                    src="assets/images/card3.jpg"
+                    alt="Educators & Caregivers"
+                  />
+                  <h3>Experienced Educators & Caregivers</h3>
+                  <p>
+                    A Dedicated Team with Effective Adult-Child Ratio thriving
+                    towards the well-being of Each Child focusing on Their
+                    Holistic Development.
+                  </p>
+                </div>
+
+                <div class="card blue">
+                  <img
+                    src="assets/images/card4.jpg"
+                    alt="Welcoming Environment"
+                  />
+                  <h3>Welcoming Environment</h3>
+                  <p>
+                    Feel the Positivity at your First Step into our Premises.
+                    The Stimulating Environment Is a Treat Both to the Eyes and
+                    Mind.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <br /><br /><br /><br />
+   
+    <div
+      class="container mx-auto py-12 px-4 sm:px-6 lg:px-8 max-w-6xl"
+    >
+      <h2
+        class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 mb-12 card-title"
+      >
+        Our Core Principles at <em class="text-purple-700">KidsOorja!</em>
+      </h2>
+
+      <div
+        class="flex flex-wrap justify-center gap-8 md:gap-10 lg:gap-12"
+      >
+        <div
+          class="bg-card-blue text-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-6 w-full sm:w-72 lg:w-80 flex flex-col items-center text-center"
+        >
+          <div
+            class="bg-white p-4 rounded-full mb-4 shadow-md flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10 text-card-blue"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+              />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-3 card-title">Skills</h3>
+          <p class="text-black leading-relaxed">
+            To teach the children not just to study but to learn through play,
+            inquiry and acquire 21st century skills.
+          </p>
+        </div>
+
+        <div
+          class="bg-card-green text-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-6 w-full sm:w-72 lg:w-80 flex flex-col items-center text-center"
+        >
+          <div
+            class="bg-white p-4 rounded-full mb-4 shadow-md flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10 text-card-green"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 6h2v2h-2V7zm0 4h2v6h-2v-6z"
+              />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-3 card-title">Values</h3>
+          <p class="text-black leading-relaxed">
+            To make our children empathetic, strong willed yet grounded.
+          </p>
+        </div>
+
+  
+        <div
+          class="bg-card-orange text-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-6 w-full sm:w-72 lg:w-80 flex flex-col items-center text-center"
+        >
+          <div
+            class="bg-white p-4 rounded-full mb-4 shadow-md flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10 text-card-orange"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-9h4v2h-4v-2zm0-4h4v2h-4V7z"
+              />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-3 card-title">Attitude</h3>
+          <p class="text-black leading-relaxed">
+            To inculcate a positive and willing attitude among the Kids Oorja!
+          </p>
+        </div>
+
+
+        <div
+          class="bg-card-pink text-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-6 w-full sm:w-72 lg:w-80 flex flex-col items-center text-center"
+        >
+          <div
+            class="bg-white p-4 rounded-full mb-4 shadow-md flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10 text-card-pink"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 13c-3.13 0-6-2.52-6-6s2.87-6 6-6 6 2.52 6 6-2.87 6-6 6zm0-8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"
+              />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-3 card-title">Vision</h3>
+          <p class="text-black leading-relaxed">
+            21st century skill development among pre-schoolers.
+          </p>
+        </div>
+
+        <div
+          class="bg-card-purple text-grey rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-6 w-full sm:w-72 lg:w-80 flex flex-col items-center text-center"
+        >
+          <div
+            class="bg-white p-4 rounded-full mb-4 shadow-md flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10 text-card-purple"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93s3.05-7.44 7-7.93v15.86zm2 0V4.07c3.95.49 7 3.85 7 7.93s-3.05 7.44-7 7.93z"
+              />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-3 card-title">Globally Ready</h3>
+          <p class="text-black leading-relaxed">
+            To integrate Indian values with internationalism and a global
+            vision.
+          </p>
+        </div>
+
+ 
+        <div
+          class="bg-card-yellow text-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-6 w-full sm:w-72 lg:w-80 flex flex-col items-center text-center"
+        >
+          <div
+            class="bg-white p-4 rounded-full mb-4 shadow-md flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10 text-card-yellow"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M4 22H2V10h2v12zm18 0h-2V7h2v15zm-4 0h-2V4h2v18zm-4 0h-2V14h2v8zm-4 0h-2V17h2v5z"
+              />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-3 card-title">Infrastructure</h3>
+          <p class="text-black leading-relaxed">
+            A state of the art infrastructure which makes the children want to
+            come to school everyday! To have many skill-wise colourful learning
+            areas rather than just classrooms!
+          </p>
+        </div>
+
+    
+        <div
+          class="bg-card-red text-grey rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-6 w-full sm:w-72 lg:w-80 flex flex-col items-center text-center"
+        >
+          <div
+            class="bg-white p-4 rounded-full mb-4 shadow-md flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10 text-card-red"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm-1-8V7h2v3h-2zm0 4h2v2h-2v-2z"
+              />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-3 card-title">We Believe</h3>
+          <p class="text-black leading-relaxed">
+            That all children are gifted. We just need to empower each one of
+            them in the area they excel in. Kids Oorja believes in doing that!
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/animation.js"></script>
+    <script src="assets/js/imagesloaded.js"></script>
+    <script src="assets/js/custom.js"></script>
+  
+</html>
