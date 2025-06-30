@@ -1,0 +1,344 @@
+/* style.css */
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f8; /* Light background */
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.preheader {
+  width: 100%;
+  background-color: #e0e0e0; /* Light gray background */
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column; /* Stack vertically on small screens */
+  align-items: center; /* Center items on small screens */
+  font-size: 0.9em;
+  color: #555;
+  box-sizing: border-box;
+}
+
+.preheader-contact {
+  display: flex;
+  flex-direction: column; /* Stack contact items vertically on small screens */
+  gap: 10px;
+  margin-bottom: 10px; /* Space before social icons on small screens */
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.preheader-social {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  color: #555;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+.icon {
+  width: 16px; /* SVG icon size */
+  height: 16px;
+  fill: currentColor; /* Use current text color for SVG */
+}
+
+/* Responsive adjustments for preheader */
+@media (min-width: 768px) {
+  .preheader {
+    flex-direction: row; /* Horizontal layout on larger screens */
+    justify-content: space-between; /* Space out contact and social */
+    max-width: 960px; /* Constrain width similar to main content */
+    border-radius: 5px; /* Slightly rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    margin-top: 15px; /* Add some top margin */
+    padding: 10px 30px; /* More padding on sides */
+  }
+
+  .preheader-contact {
+    flex-direction: row; /* Contact items side-by-side */
+    margin-bottom: 0;
+    gap: 20px; /* More space between contact items */
+  }
+}
+
+.page-header {
+  width: 100%;
+  max-width: 960px; /* Aligns with card max-width */
+  padding: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  text-align: left; /* Align header text to left as in image */
+}
+
+.page-header h1 {
+  font-size: 2.5em; /* Larger heading */
+  color: #2c3e50; /* Darker text for header */
+  margin: 0;
+  font-weight: 700;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Space between cards */
+  padding: 20px;
+  max-width: 960px; /* Max width for the container of cards */
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 30px; /* Space before potential footer */
+}
+
+.founder-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 30px;
+  display: flex;
+  flex-direction: column; /* Stack vertically on small screens */
+  align-items: center; /* Center items on small screens */
+  text-align: center; /* Center text on small screens */
+}
+
+.founder-intro {
+  display: flex;
+  flex-direction: column; /* Stack image and details vertically initially */
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%; /* Take full width */
+}
+
+.founder-image-wrapper {
+  flex-shrink: 0; /* Prevent image from shrinking */
+  margin-bottom: 20px; /* Space between image and text on small screens */
+}
+
+.founder-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Circular image */
+  object-fit: cover;
+  border: 3px solid #818cf8; /* A subtle border */
+}
+
+.founder-details {
+  flex-grow: 1; /* Allow details to take available space */
+}
+
+.founder-details h2 {
+  font-size: 1.8em;
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.founder-details .title {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.founder-details .quote {
+  font-style: italic;
+  color: #f1c40f; /* Yellow color for the quote as in image */
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding: 0 10px; /* Add some padding for better readability */
+}
+
+.founder-description p {
+  font-size: 1em;
+  color: #555;
+  text-align: justify; /* Justify text for better appearance */
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .founder-card {
+    flex-direction: row; /* Horizontal layout on larger screens */
+    text-align: left; /* Align text to left */
+    align-items: flex-start; /* Align items to start */
+  }
+
+  .founder-intro {
+    flex-direction: row; /* Image and details side-by-side */
+    align-items: flex-start;
+    margin-bottom: 0; /* Remove bottom margin */
+    margin-right: 30px; /* Space between intro and description */
+    width: auto; /* Allow content to dictate width */
+  }
+
+  .founder-image-wrapper {
+    margin-bottom: 0;
+    margin-right: 30px; /* Space between image and text in intro */
+  }
+
+  .founder-details .quote {
+    margin-left: 0; /* Remove potential extra margin */
+    padding: 0; /* Remove padding */
+  }
+}
+
+@media (min-width: 992px) {
+  .page-header {
+    padding-left: 0; /* Adjust padding for larger screens if needed */
+    padding-right: 0;
+  }
+  .cards-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.page-header {
+  width: 100%;
+  max-width: 960px; /* Aligns with card max-width */
+  padding: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  text-align: left; /* Align header text to left as in image */
+}
+
+.page-header h1 {
+  font-size: 2.5em; /* Larger heading */
+  color: #2c3e50; /* Darker text for header */
+  margin: 0;
+  font-weight: 700;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Space between cards */
+  padding: 20px;
+  max-width: 960px; /* Max width for the container of cards */
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 30px; /* Space before potential footer */
+}
+
+.founder-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 30px;
+  display: flex;
+  flex-direction: column; /* Stack vertically on small screens */
+  align-items: center; /* Center items on small screens */
+  text-align: center; /* Center text on small screens */
+}
+
+.founder-intro {
+  display: flex;
+  flex-direction: column; /* Stack image and details vertically initially */
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%; /* Take full width */
+}
+
+.founder-image-wrapper {
+  flex-shrink: 0; /* Prevent image from shrinking */
+  margin-bottom: 20px; /* Space between image and text on small screens */
+}
+
+.founder-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Circular image */
+  object-fit: cover;
+  border: 3px solid #818cf8; /* A subtle border */
+}
+
+.founder-details {
+  flex-grow: 1; /* Allow details to take available space */
+}
+
+.founder-details h2 {
+  font-size: 1.8em;
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.founder-details .title {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.founder-details .quote {
+  font-style: italic;
+  color: #f1c40f; /* Yellow color for the quote as in image */
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding: 0 10px; /* Add some padding for better readability */
+}
+
+.founder-description p {
+  font-size: 1em;
+  color: #555;
+  text-align: justify; /* Justify text for better appearance */
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .founder-card {
+    flex-direction: row; /* Horizontal layout on larger screens */
+    text-align: left; /* Align text to left */
+    align-items: flex-start; /* Align items to start */
+  }
+
+  .founder-intro {
+    flex-direction: row; /* Image and details side-by-side */
+    align-items: flex-start;
+    margin-bottom: 0; /* Remove bottom margin */
+    margin-right: 30px; /* Space between intro and description */
+    width: auto; /* Allow content to dictate width */
+  }
+
+  .founder-image-wrapper {
+    margin-bottom: 0;
+    margin-right: 30px; /* Space between image and text in intro */
+  }
+
+  .founder-details .quote {
+    margin-left: 0; /* Remove potential extra margin */
+    padding: 0; /* Remove padding */
+  }
+}
+
+@media (min-width: 992px) {
+  .page-header {
+    padding-left: 0; /* Adjust padding for larger screens if needed */
+    padding-right: 0;
+  }
+  .cards-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
