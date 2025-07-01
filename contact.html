@@ -29,7 +29,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/quotes.css" />
+    <!-- <link rel="stylesheet" href="assets/css/quotes.css" /> -->
+    <link rel="stylesheet" href="assets/css/contact.css" />
   </head>
 
   <body>
@@ -70,7 +71,7 @@
                   <a href="about.html">About</a>
                 </li>
                 <li class="scroll-to-section">
-                  <a href="quotes.html" class="active">Founder's Desk</a>
+                  <a href="quotes.html">Founder's Desk</a>
                 </li>
                 <li class="scroll-to-section">
                   <a href="programs.html">Programs Offered</a>
@@ -83,7 +84,7 @@
                 </li> -->
                 <!-- <li class="scroll-to-section"><a href="#blog">Blog</a></li> -->
                 <li class="scroll-to-section">
-                  <a href="contact.html">Contact</a>
+                  <a href="contact.html" class="active">Contact</a>
                 </li>
                 <li class="scroll-to-section">
                   <!-- <div class="border-first-button">
@@ -102,83 +103,90 @@
     </header>
     <!-- ***** Header Area End ***** -->
 
-    <header class="page-header" style="margin-top: 6%">
-      <h1>A Word from the Founder</h1>
-    </header>
+    <!-- <header class="page-header" style="margin-top: 6%">
+      <h1>Contact Us</h1>
+    </header> -->
+    <div style="margin-top: 6%"></div>
 
-    <div class="cards-container">
-      <!-- Card 1: Ms. Arti Deshpande -->
-      <section class="founder-card">
-        <div class="founder-intro">
-          <div class="founder-image-wrapper">
-            <img
-              src="assets/images/arti-deshpande.png"
-              alt="Ms. Arti Deshpande"
-              class="founder-image"
-            />
-          </div>
-          <div class="founder-details">
-            <h2>Mrs. Arti Deshpande</h2>
-            <p class="title">Founder Director</p>
-            <p class="quote">
-              "Every child deserves to feel safe, loved, and excited to learn.
-              That’s the heart of what we do every day."
-            </p>
-          </div>
-        </div>
-        <div class="founder-description">
-          <p>
-            With over 12 years of experience in early childhood education, Arti
-            Madam brings a deep passion for nurturing young minds and creating a
-            safe, inspiring environment for every child. Holding a degree in Msc
-            Food science & Nutrition, completed teachers training course, she is
-            dedicated to maintaining the highest standards of care, safety, and
-            learning. Her leadership style is hands-on and heart-centered
-            supporting both children and staff to thrive. Whether it's welcoming
-            new families, designing an engaging curriculum, or guiding her team
-            with compassion, Arti Madam ensures that every child feels seen,
-            heard, and loved. When she's not in the classroom, she enjoys
-            reading children's books.
-          </p>
-        </div>
-      </section>
+    <section class="contact-us-section">
+      <h1 class="contact-main-heading">Contact Us</h1>
 
-      <!-- Card 2: Mrs. Vaishali Naik -->
-      <section class="founder-card">
-        <div class="founder-intro">
-          <div class="founder-image-wrapper">
-            <img
-              src="assets/images/vaishali-naik.png"
-              alt="Mrs. Vaishali Naik"
-              class="founder-image"
-            />
-          </div>
-          <div class="founder-details">
-            <h2>Mrs. Vaishali Naik</h2>
-            <p class="title">Founder Director</p>
-            <p class="quote">
-              "Watching children grow in confidence and curiosity every day is
-              the most rewarding part of my job."
-            </p>
-          </div>
+      <div class="contact-content-wrapper">
+        <!-- Left Partition: Contact Form -->
+        <div class="contact-form-container">
+          <form action="#" method="POST" class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your Full Name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="address">Address</label>
+              <textarea
+                id="address"
+                name="address"
+                rows="3"
+                placeholder="Your Address"
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Your Phone Number"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="kid-age">Kid's Age</label>
+              <input
+                type="number"
+                id="kid-age"
+                name="kid_age"
+                min="0"
+                max="18"
+                placeholder="e.g., 4"
+                required
+              />
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+          </form>
         </div>
-        <div class="founder-description">
-          <p>
-            With a strong background in early education and a passion for
-            supporting both children and families, Vaishali Mam plays a key role
-            in the day-to-day operations and curriculum planning of Kids' Oasis.
-            She brings 12 years of hands-on experience working with children of
-            all age groups, along with expertise in child behavior guidance &
-            curriculum development. Her calm, approachable nature makes her a
-            favourite among both kids and parents. In her role, she focuses on
-            creating enriching classroom experiences, mentoring teachers, and
-            fostering a joyful learning environment. Outside of school, she
-            enjoys baking, nature walks and is always looking for creative ways
-            to make learning fun.
-          </p>
+
+        <!-- Right Partition: Google Map Location -->
+        <div class="contact-map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4700.101418837171!2d73.79877767603648!3d18.49591048259279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf6c26b73ab7%3A0x200e9a3880856254!2sKids%20Oorja%20Pre-scool%20and%20Wings%20Childcare%20%26%20Activity%20Centre!5e1!3m2!1sen!2sin!4v1751342083378!5m2!1sen!2sin"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
-      </section>
-    </div>
+      </div>
+
+      <!-- Separate Section: Additional Contact Details -->
+      <div class="contact-details-section">
+        <h3 class="details-heading">Contact For More Details</h3>
+        <p><strong>Arti Deshpande</strong></p>
+        <p>99221 73680</p>
+        <p><strong>Vaishali Naik</strong></p>
+        <p>80870 97097</p>
+        <p class="school-name">KIDS OORJA PRESCHOOL</p>
+        <p>6/2 HERAMB BUNGALOW, SAHAJANAND SOC,</p>
+        <p>KOTHRUD</p>
+      </div>
+    </section>
 
     <footer class="footer">
       <div class="footer-container">

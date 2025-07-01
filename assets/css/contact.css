@@ -1,0 +1,196 @@
+/* contact.css */
+
+/* General Body and Font Styles */
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f8; /* Light background */
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+/* Contact Us Section Container */
+.contact-us-section {
+  width: 100%;
+  max-width: 1200px; /* Max width for the entire section */
+  margin: 40px auto; /* Center the section with some vertical margin */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Main Heading */
+.contact-main-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5em;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+/* Wrapper for Form and Map Partitions */
+.contact-content-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+  gap: 30px; /* Space between the form and map containers */
+  margin-bottom: 40px;
+}
+
+/* Contact Form Container */
+.contact-form-container {
+  flex: 1 1 45%; /* Allows containers to grow/shrink, minimum 45% width */
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  box-sizing: border-box;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="tel"],
+.contact-form input[type="number"],
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #333;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.contact-form textarea {
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 80px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #818cf8; /* Highlight on focus */
+  outline: none;
+  box-shadow: 0 0 5px rgba(129, 140, 248, 0.5);
+}
+
+.submit-button {
+  background-color: #6d28d9; /* Purple button */
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: auto; /* Allow button to size based on content */
+  display: inline-block; /* For proper padding and margin */
+}
+
+.submit-button:hover {
+  background-color: #5b21aa; /* Darker purple on hover */
+  transform: translateY(-2px);
+}
+
+/* Google Map Container */
+.contact-map-container {
+  flex: 1 1 45%; /* Allows containers to grow/shrink, minimum 45% width */
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden; /* Ensures map corners are rounded */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  min-height: 350px; /* Minimum height for the map */
+}
+
+.contact-map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0; /* Remove default iframe border */
+  display: block; /* Remove extra space below iframe */
+}
+
+/* Additional Contact Details Section */
+.contact-details-section {
+  width: 100%;
+  max-width: 800px; /* Constrain width for readability */
+  margin: 0 auto; /* Center this section */
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center the text content */
+  box-sizing: border-box;
+}
+
+.details-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8em;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.contact-details-section p {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 8px; /* Space between lines */
+}
+
+.contact-details-section p strong {
+  color: #333; /* Darker color for names */
+}
+
+.contact-details-section .school-name {
+  font-weight: 600;
+  margin-top: 20px; /* More space above school name */
+  color: #6d28d9; /* Highlight school name */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-content-wrapper {
+    flex-direction: column; /* Stack form and map vertically */
+  }
+
+  .contact-form-container,
+  .contact-map-container {
+    flex: 1 1 100%; /* Take full width */
+    width: 100%; /* Ensure they take full width */
+  }
+
+  .contact-map-container {
+    min-height: 300px; /* Adjust min-height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-main-heading {
+    font-size: 2em; /* Smaller heading on very small screens */
+  }
+
+  .contact-form-container,
+  .contact-details-section {
+    padding: 20px; /* Reduce padding on smaller screens */
+  }
+
+  .details-heading {
+    font-size: 1.5em;
+  }
+}

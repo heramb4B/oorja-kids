@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel - Kids Oorja</title>
+    <link rel="stylesheet" href="admin.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="admin-container">
+      <h1 class="admin-main-heading">Admin Panel</h1>
+      <p class="admin-user-id">
+        Logged in as: <span id="currentUserId">Loading...</span>
+      </p>
+
+      <div class="data-table-container">
+        <p id="loadingMessage" class="loading-message">
+          Loading contact submissions...
+        </p>
+        <table id="contactSubmissionsTable" class="data-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Phone</th>
+              <th>Kid's Age</th>
+              <th>Submitted On</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Data will be inserted here by JavaScript -->
+          </tbody>
+        </table>
+        <p id="noDataMessage" class="no-data-message" style="display: none">
+          No contact submissions yet.
+        </p>
+      </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+      import {
+        getAuth,
+        signInAnonymously,
+        signInWithCustomToken,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+      import {
+        getFirestore,
+        collection,
+        query,
+        onSnapshot,
+        orderBy,
+      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+      // Global variables provided by the Canvas environment
+      const appId =
+        typeof __app_id !== "undefined" ? __app_id : "default-app-id";
+      const firebaseConfig =
+        typeof __firebase_config !== "undefined"
+          ? JSON.parse(__firebase_config)
+          : {};
+      const initialAuthToken =
+        typeof __initial_auth_token !== "undefined"
+          ? __initial_auth_token
+          : null;
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const auth = getAuth(app);
+
+      const currentUserIdSpan = document.getElementById("currentUserId");
+      const loadingMessage = document.getElementById("loadingMessage");
+      const noDataMessage = document.getElementById("noDataMessage");
+      const submissionsTableBody = document.querySelector(
+        "#contactSubmissionsTable tbody"
+      );
+
+      let isAuthReady = false;
+
+      // Authenticate and set up auth state listener
+      onAuthStateChanged(auth, async (user) => {
+        if (!user) {
+          try {
+            if (initialAuthToken) {
+              await signInWithCustomToken(auth, initialAuthToken);
+            } else {
+              await signInAnonymously(auth);
+            }
+            user = auth.currentUser; // Get the user after sign-in
+          } catch (error) {
+            console.error("Firebase authentication error:", error);
+            currentUserIdSpan.textContent = "Authentication Failed";
+            loadingMessage.textContent =
+              "Error loading data: Authentication failed.";
+            return;
+          }
+        }
+
+        if (user) {
+          currentUserIdSpan.textContent = user.uid;
+          isAuthReady = true;
+          fetchContactSubmissions(); // Fetch data once authenticated
+        } else {
+          currentUserIdSpan.textContent = "Not Authenticated";
+          loadingMessage.textContent = "Authentication required to view data.";
+        }
+      });
+
+      function fetchContactSubmissions() {
+        if (!isAuthReady) {
+          console.warn("Firestore not ready. Authentication not complete.");
+          return;
+        }
+
+        // Reference to the public contact submissions collection
+        // Data is stored under /artifacts/{appId}/public/data/contactSubmissions
+        const submissionsCollectionRef = collection(
+          db,
+          `artifacts/${appId}/public/data/contactSubmissions`
+        );
+
+        // Use onSnapshot for real-time updates
+        onSnapshot(
+          submissionsCollectionRef,
+          (snapshot) => {
+            loadingMessage.style.display = "none"; // Hide loading message
+            submissionsTableBody.innerHTML = ""; // Clear existing rows
+
+            if (snapshot.empty) {
+              noDataMessage.style.display = "block"; // Show no data message
+              return;
+            } else {
+              noDataMessage.style.display = "none"; // Hide no data message
+            }
+
+            snapshot.forEach((doc) => {
+              const data = doc.data();
+              const row = submissionsTableBody.insertRow();
+
+              row.insertCell().textContent = data.name || "N/A";
+              row.insertCell().textContent = data.address || "N/A";
+              row.insertCell().textContent = data.phone || "N/A";
+              row.insertCell().textContent =
+                data.kidAge !== undefined ? data.kidAge : "N/A";
+
+              const timestamp = data.timestamp
+                ? new Date(data.timestamp.seconds * 1000).toLocaleString()
+                : "N/A";
+              row.insertCell().textContent = timestamp;
+            });
+          },
+          (error) => {
+            console.error("Error fetching contact submissions:", error);
+            loadingMessage.textContent =
+              "Error loading data. Please try again.";
+            loadingMessage.style.color = "red";
+          }
+        );
+      }
+    </script>
+  </body>
+</html>

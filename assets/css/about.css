@@ -1,0 +1,346 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px;
+}
+
+.card {
+  width: 250px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* <-- Shadow effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* For hover effect */
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.card.red {
+  background-color: #f44336;
+}
+
+.card.yellow {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.card.green {
+  background-color: #8bc34a;
+}
+
+.card.blue {
+  background-color: #03a9f4;
+}
+
+.card img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 4px dashed white;
+  margin: 0 auto 15px;
+  position: relative;
+  margin-bottom: 55px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: white;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
+}
+
+.features-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.features-column {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.feature-icon {
+  background-color: #6a1b9a;
+  color: white;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.feature-text {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .features-section {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.bg-card-blue {
+  background-color: #87ceeb;
+} /* Sky Blue */
+.bg-card-green {
+  background-color: #90ee90;
+} /* Light Green */
+.bg-card-orange {
+  background-color: #ffa07a;
+} /* Light Salmon */
+.bg-card-pink {
+  background-color: #ffb6c1;
+} /* Light Pink */
+.bg-card-purple {
+  background-color: #ba55d3;
+} /* Medium Orchid */
+.bg-card-yellow {
+  background-color: #ffd700;
+} /* Gold */
+.bg-card-red {
+  background-color: #ff6347;
+} /* Tomato */
+.card-title {
+  font-family: "Poppins", sans-serif; /* Poppins for titles */
+}
+
+/* ***** NEW CSS FOR ABOUT US SECTION ***** */
+.about-us-content {
+  max-width: 900px; /* Limit width for readability */
+}
+.about-us-content h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700; /* Bold for the main heading */
+  color: #333; /* Darker color for prominence */
+}
+.about-us-content p {
+  font-family: "Inter", sans-serif;
+  line-height: 1.8; /* More spacing for readability */
+  color: #555; /* Slightly lighter for body text */
+  text-align: justify; /* Justify text for a clean block */
+}
+
+/* Consistent font for the entire body */
+body {
+  font-family: "Inter", sans-serif;
+}
+.card-title,
+.section-heading h4,
+.section-heading h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Heading Font Consistency */
+.principle-card-title,
+.principles-main-heading {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Main Container for Principles Section */
+.principles-section-container {
+  width: 100%;
+  max-width: 72rem; /* max-w-6xl (1152px) */
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 3rem; /* py-12 */
+  padding-bottom: 3rem; /* py-12 */
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem; /* px-4 */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Main Heading Styles */
+.principles-main-heading {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 800; /* font-extrabold */
+  text-align: center; /* text-center */
+  color: #1f2937; /* text-gray-800 */
+  margin-bottom: 3rem; /* mb-12 */
+}
+
+.principles-highlight {
+  color: #6d28d9; /* text-purple-700 */
+  font-style: normal; /* Remove italic from em tag */
+}
+
+/* Grid Container for Cards */
+.principles-cards-grid {
+  display: flex; /* flex */
+  flex-wrap: wrap; /* flex-wrap */
+  justify-content: center; /* justify-center */
+  gap: 2rem; /* gap-8 (32px) */
+}
+
+/* Individual Card Styles */
+.principle-card {
+  border-radius: 1rem; /* rounded-2xl (16px) */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-xl */
+  transition: all 0.3s ease-in-out; /* transition-all duration-300 */
+  padding: 1.5rem; /* p-6 */
+  width: 100%; /* w-full */
+  display: flex; /* flex */
+  flex-direction: column; /* flex-col */
+  align-items: center; /* items-center */
+  text-align: center; /* text-center */
+  color: #1f2937; /* text-gray-800 for card text */
+}
+
+.principle-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* hover:shadow-2xl */
+  transform: translateY(-0.5rem); /* hover:-translate-y-2 */
+}
+
+/* Background Colors for Cards (from original inline style) */
+.principle-card.bg-card-blue {
+  background-color: #87ceeb;
+} /* Sky Blue */
+.principle-card.bg-card-green {
+  background-color: #90ee90;
+} /* Light Green */
+.principle-card.bg-card-orange {
+  background-color: #ffa07a;
+} /* Light Salmon */
+.principle-card.bg-card-pink {
+  background-color: #ffb6c1;
+} /* Light Pink */
+.principle-card.bg-card-purple {
+  background-color: #ba55d3;
+} /* Medium Orchid */
+.principle-card.bg-card-yellow {
+  background-color: #ffd700;
+} /* Gold */
+.principle-card.bg-card-red {
+  background-color: #ff6347;
+} /* Tomato */
+
+/* Icon Wrapper Styles */
+.principle-icon-wrapper {
+  background-color: #fff; /* bg-white */
+  padding: 1rem; /* p-4 */
+  border-radius: 9999px; /* rounded-full */
+  margin-bottom: 1rem; /* mb-4 */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.06); /* shadow-md */
+  display: flex; /* flex */
+  align-items: center; /* items-center */
+  justify-content: center; /* justify-center */
+}
+
+/* SVG Icon Styles */
+.principle-icon {
+  height: 2.5rem; /* h-10 */
+  width: 2.5rem; /* w-10 */
+}
+
+/* Icon Colors (from original inline style) */
+.principle-icon.icon-blue {
+  color: #87ceeb;
+}
+.principle-icon.icon-green {
+  color: #90ee90;
+}
+.principle-icon.icon-orange {
+  color: #ffa07a;
+}
+.principle-icon.icon-pink {
+  color: #ffb6c1;
+}
+.principle-icon.icon-purple {
+  color: #ba55d3;
+}
+.principle-icon.icon-yellow {
+  color: #ffd700;
+}
+.principle-icon.icon-red {
+  color: #ff6347;
+}
+
+/* Card Title Styles */
+.principle-card-title {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 0.75rem; /* mb-3 */
+}
+
+/* Card Paragraph Text Styles */
+.principle-card-text {
+  color: #333; /* text-black, adjusted to a dark gray for better contrast on light backgrounds */
+  line-height: 1.625; /* leading-relaxed */
+  margin-bottom: 0; /* Ensure no extra margin at the bottom of the paragraph */
+}
+
+/* Responsive Adjustments */
+@media (min-width: 640px) {
+  /* Equivalent to sm breakpoint */
+  .principles-section-container {
+    padding-left: 1.5rem; /* sm:px-6 */
+    padding-right: 1.5rem; /* sm:px-6 */
+  }
+  .principles-main-heading {
+    font-size: 3rem; /* sm:text-5xl */
+  }
+  .principles-cards-grid {
+    gap: 2rem; /* md:gap-10 (40px) - keeping 2rem for consistency on sm, will adjust md/lg separately */
+  }
+  .principle-card {
+    width: 18rem; /* sm:w-72 (288px) */
+  }
+}
+
+@media (min-width: 768px) {
+  /* Equivalent to md breakpoint */
+  .principles-cards-grid {
+    gap: 2.5rem; /* md:gap-10 (40px) */
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Equivalent to lg breakpoint */
+  .principles-section-container {
+    padding-left: 2rem; /* lg:px-8 */
+    padding-right: 2rem; /* lg:px-8 */
+  }
+  .principles-cards-grid {
+    gap: 3rem; /* lg:gap-12 (48px) */
+  }
+  .principle-card {
+    width: 20rem; /* lg:w-80 (320px) */
+  }
+}
