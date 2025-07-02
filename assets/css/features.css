@@ -1,0 +1,107 @@
+/* features.css */
+
+/* Removed body styles to prevent interference with global page layout */
+
+.main-content-wrapper {
+  width: 100%;
+  max-width: 1200px; /* Max width for the entire section content */
+  margin: 40px auto; /* Center the section with some vertical margin */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.section-main-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5em;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.section-sub-heading {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1em;
+  color: #555;
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 800px; /* Limit width for readability */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.features-section {
+  display: flex;
+  flex-wrap: wrap; /* Allows columns to wrap to the next line */
+  gap: 40px; /* Space between columns */
+  justify-content: center; /* Center columns when they don't fill the row */
+}
+
+.features-column {
+  flex: 1 1 100%; /* Default: each column takes full width on small screens */
+  max-width: 500px; /* Max width for a single column to prevent it from being too wide */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start; /* Align icon and text to the top */
+  gap: 15px; /* Space between icon and text */
+  margin-bottom: 25px; /* Space between feature items */
+  /* Removed card-like styling */
+  /* background-color: #fff; */
+  /* padding: 20px; */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); */
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+}
+
+.feature-item:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  /* Removed hover box-shadow */
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); */
+}
+
+.feature-icon {
+  /* background-color: #6a1b9a;  */
+  color: white;
+  width: 50px; /* Increased size for icons */
+  height: 50px;
+  min-width: 50px; /* Ensure it doesn't shrink */
+  border-radius: 50%; /* Circular shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px; /* Larger font size for emojis */
+  overflow: hidden; /* Hide overflow for images */
+}
+
+.feature-icon img {
+  width: 100%; /* Make image fill the icon container */
+  height: 100%;
+  object-fit: contain; /* Ensure full image is visible, not cropped */
+  border-radius: 50%; /* Keep image circular if it's square/rectangular */
+  padding: 5px; /* Add padding inside the icon circle for images */
+  box-sizing: border-box;
+}
+
+.feature-text {
+  font-size: 1em; /* Adjusted to em for better scaling */
+  line-height: 1.5;
+  color: #555;
+  flex-grow: 1; /* Allow text to take remaining space */
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .features-column {
+    flex: 1 1 calc(50% - 20px); /* Two columns on medium screens, accounting for gap */
+    /* max-width removed to allow flex to manage width */
+  }
+}
+
+@media (min-width: 1024px) {
+  .features-column {
+    flex: 1 1 calc(50% - 20px); /* Maintain two columns on larger screens */
+  }
+}

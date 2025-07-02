@@ -54,13 +54,33 @@ body {
 }
 
 .program-card {
-  background-color: #e6f7ff; /* Changed to a very light blue for a more noticeable light color */
+  /* Removed: background-color: #e6f7ff; */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
   padding: 25px;
   text-align: left;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover effect */
   cursor: pointer; /* Indicate interactivity */
+}
+
+/* Unique colorful backgrounds for each card */
+.program-card:nth-child(1) {
+  background-color: #ffe0b2; /* Light Orange */
+}
+.program-card:nth-child(2) {
+  background-color: #c8e6c9; /* Light Green */
+}
+.program-card:nth-child(3) {
+  background-color: #bbdefb; /* Light Blue */
+}
+.program-card:nth-child(4) {
+  background-color: #ffcdd2; /* Light Red/Pink */
+}
+.program-card:nth-child(5) {
+  background-color: #f0f4c3; /* Light Yellow-Green */
+}
+.program-card:nth-child(6) {
+  background-color: #e1bee7; /* Light Purple */
 }
 
 .program-card:hover {

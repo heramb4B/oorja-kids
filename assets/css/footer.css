@@ -1,3 +1,5 @@
+/* footer.css */
+
 .footer {
   background-color: #2d3748; /* bg-gray-800 */
   color: #fff; /* text-white */
@@ -50,6 +52,7 @@
 .footer-logo-section img {
   border-radius: 0.25rem; /* rounded-md */
   margin-bottom: 1rem; /* mb-4 */
+  /* Ensure the inline style height: 85px; width: auto; margin-left: 50px is handled by HTML or specific CSS if needed */
 }
 .footer-logo-section p {
   color: #ffffff; /* text-gray-400 */
@@ -62,13 +65,13 @@
   font-weight: 600; /* font-semibold */
   margin-bottom: 1rem; /* mb-4 */
   color: #818cf8; /* text-indigo-400 */
+  text-align: left; /* Ensure heading is left-aligned */
 }
 .footer-links-list,
 .footer-contact-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  /* space-y-2: 0.5rem; /* Equivalent to space-y-2 - REMOVED THIS LINE */
 }
 .footer-links-list li,
 .footer-contact-list li {
@@ -81,7 +84,7 @@
   transition: color 300ms ease-in-out; /* transition duration-300 ease-in-out */
   display: flex;
   align-items: center;
-  justify-content: center; /* For center alignment on mobile */
+  justify-content: flex-start; /* Align items to the start (left) */
 }
 .footer-links-list a:hover,
 .footer-contact-list a:hover {
@@ -92,17 +95,21 @@
   font-size: 0.875rem; /* text-sm */
   padding-top: 0.5rem; /* pt-2 */
   align-items: flex-start; /* items-start */
-  justify-content: center; /* justify-center */
+  justify-content: flex-start; /* Align address text to the start (left) */
 }
+/* Removed media query specific justify-content for consistency */
+
+/* Specific fix for Quick Links alignment on mobile */
+.footer-links-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start (left) for all screen sizes */
+  margin-left: 0; /* Ensure no inline or conflicting margins */
+}
+
 @media (min-width: 768px) {
-  .footer-links-list a,
-  .footer-contact-list a,
-  .footer-contact-list li.address-text {
-    justify-content: flex-start; /* md:justify-start */
-  }
-  .footer-links-list,
-  .footer-contact-list {
-    text-align: left; /* md:text-left */
+  .footer-links-list {
+    align-items: flex-start; /* Ensure it stays left-aligned on larger screens */
   }
 }
 

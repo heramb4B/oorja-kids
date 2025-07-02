@@ -1,18 +1,18 @@
 /* style.css */
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif; /* Using a common web-safe font */
   margin: 0;
-  padding: 0;
-  background-color: #f0f4f8; /* Light background */
-  color: #333;
-  line-height: 1.6;
   display: flex;
   flex-direction: column;
-  align-items: center;
   min-height: 100vh;
+  background-color: #f0f4f8; /* Light background for visibility */
+  color: #333;
+  line-height: 1.6;
+  align-items: center; /* Center content horizontally */
 }
 
+/* Preheader Styles (from previous updates) */
 .preheader {
   width: 100%;
   background-color: #e0e0e0; /* Light gray background */
@@ -86,6 +86,7 @@ body {
   }
 }
 
+/* Page Header (from previous updates) */
 .page-header {
   width: 100%;
   max-width: 960px; /* Aligns with card max-width */
@@ -102,6 +103,7 @@ body {
   font-weight: 700;
 }
 
+/* Cards Container (from previous updates) */
 .cards-container {
   display: flex;
   flex-direction: column;
@@ -113,6 +115,7 @@ body {
   margin-bottom: 30px; /* Space before potential footer */
 }
 
+/* Founder Card Styles */
 .founder-card {
   background-color: #fff;
   border-radius: 10px;
@@ -135,14 +138,16 @@ body {
 .founder-image-wrapper {
   flex-shrink: 0; /* Prevent image from shrinking */
   margin-bottom: 20px; /* Space between image and text on small screens */
+  /* Removed border-radius and border specific to the wrapper if it had any */
 }
 
 .founder-image {
   width: 150px;
   height: 150px;
-  border-radius: 50%; /* Circular image */
-  object-fit: cover;
-  border: 3px solid #818cf8; /* A subtle border */
+  border-radius: 5px; /* Added a slight border-radius for soft corners */
+  object-fit: contain; /* Changed from 'cover' to 'contain' to show full image */
+  display: block; /* Ensures no extra space below the image */
+  background-color: #ffffff; /* Optional: Add a background to see the "empty" space if image aspect ratio doesn't match */
 }
 
 .founder-details {
@@ -165,7 +170,7 @@ body {
 
 .founder-details .quote {
   font-style: italic;
-  color: #f1c40f; /* Yellow color for the quote as in image */
+  color: #80078d; /* Yellow color for the quote as in image */
   font-weight: 600;
   margin-bottom: 20px;
   padding: 0 10px; /* Add some padding for better readability */
@@ -177,135 +182,7 @@ body {
   text-align: justify; /* Justify text for better appearance */
 }
 
-/* Responsive Adjustments */
-@media (min-width: 768px) {
-  .founder-card {
-    flex-direction: row; /* Horizontal layout on larger screens */
-    text-align: left; /* Align text to left */
-    align-items: flex-start; /* Align items to start */
-  }
-
-  .founder-intro {
-    flex-direction: row; /* Image and details side-by-side */
-    align-items: flex-start;
-    margin-bottom: 0; /* Remove bottom margin */
-    margin-right: 30px; /* Space between intro and description */
-    width: auto; /* Allow content to dictate width */
-  }
-
-  .founder-image-wrapper {
-    margin-bottom: 0;
-    margin-right: 30px; /* Space between image and text in intro */
-  }
-
-  .founder-details .quote {
-    margin-left: 0; /* Remove potential extra margin */
-    padding: 0; /* Remove padding */
-  }
-}
-
-@media (min-width: 992px) {
-  .page-header {
-    padding-left: 0; /* Adjust padding for larger screens if needed */
-    padding-right: 0;
-  }
-  .cards-container {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-.page-header {
-  width: 100%;
-  max-width: 960px; /* Aligns with card max-width */
-  padding: 20px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-  text-align: left; /* Align header text to left as in image */
-}
-
-.page-header h1 {
-  font-size: 2.5em; /* Larger heading */
-  color: #2c3e50; /* Darker text for header */
-  margin: 0;
-  font-weight: 700;
-}
-
-.cards-container {
-  display: flex;
-  flex-direction: column;
-  gap: 30px; /* Space between cards */
-  padding: 20px;
-  max-width: 960px; /* Max width for the container of cards */
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 30px; /* Space before potential footer */
-}
-
-.founder-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  padding: 30px;
-  display: flex;
-  flex-direction: column; /* Stack vertically on small screens */
-  align-items: center; /* Center items on small screens */
-  text-align: center; /* Center text on small screens */
-}
-
-.founder-intro {
-  display: flex;
-  flex-direction: column; /* Stack image and details vertically initially */
-  align-items: center;
-  margin-bottom: 20px;
-  width: 100%; /* Take full width */
-}
-
-.founder-image-wrapper {
-  flex-shrink: 0; /* Prevent image from shrinking */
-  margin-bottom: 20px; /* Space between image and text on small screens */
-}
-
-.founder-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%; /* Circular image */
-  object-fit: cover;
-  border: 3px solid #818cf8; /* A subtle border */
-}
-
-.founder-details {
-  flex-grow: 1; /* Allow details to take available space */
-}
-
-.founder-details h2 {
-  font-size: 1.8em;
-  color: #2c3e50;
-  margin-top: 0;
-  margin-bottom: 5px;
-  font-weight: 600;
-}
-
-.founder-details .title {
-  font-size: 1em;
-  color: #666;
-  margin-bottom: 15px;
-}
-
-.founder-details .quote {
-  font-style: italic;
-  color: #f1c40f; /* Yellow color for the quote as in image */
-  font-weight: 600;
-  margin-bottom: 20px;
-  padding: 0 10px; /* Add some padding for better readability */
-}
-
-.founder-description p {
-  font-size: 1em;
-  color: #555;
-  text-align: justify; /* Justify text for better appearance */
-}
-
-/* Responsive Adjustments */
+/* Responsive Adjustments for Founder Cards */
 @media (min-width: 768px) {
   .founder-card {
     flex-direction: row; /* Horizontal layout on larger screens */
