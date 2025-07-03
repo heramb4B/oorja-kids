@@ -1,0 +1,199 @@
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f8; /* Light background */
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.gallery-section {
+  width: 100%;
+  max-width: 1400px; /* Wider container for more sprawling layout */
+  margin: 40px auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.gallery-main-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.8em;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.gallery-sub-heading {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1em;
+  color: #555;
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-grid-container {
+  display: grid;
+  /* Responsive grid columns: starts with 1, goes to 2, then 3, then 4 */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px; /* Base gap between grid items */
+  position: relative; /* For z-index and transformations */
+  padding: 20px; /* Padding to allow for rotations/shadows at edges */
+}
+
+.gallery-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure image stays within bounds */
+  position: relative; /* For z-index and transformations */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+    z-index 0.1s ease;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Inner padding to simulate a border/frame */
+  border: 2px solid rgba(255, 255, 255, 0.8); /* White border for photo effect */
+}
+
+.gallery-item:hover {
+  transform: scale(1.05) translateY(-5px) !important; /* Scale up and slight lift */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 10; /* Bring hovered item to front */
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px; /* Slightly rounded corners for images */
+  object-fit: cover; /* Fill the container, might crop if aspect ratio doesn't match */
+  /* If your "random shapes" are actual transparent PNG cutouts, consider object-fit: contain;
+       and setting a background-color on .gallery-item to show behind the cutout. */
+}
+
+/* Creative Rotations and Z-index for a "random" feel */
+/* These values are carefully chosen to create a dynamic, overlapping collage */
+.gallery-item.item-1 {
+  transform: rotate(-3deg);
+  z-index: 5;
+  margin-top: 10px;
+  margin-left: -5px;
+}
+.gallery-item.item-2 {
+  transform: rotate(5deg);
+  z-index: 6;
+  margin-top: -15px;
+  margin-left: 10px;
+}
+.gallery-item.item-3 {
+  transform: rotate(-2deg);
+  z-index: 4;
+  margin-top: 5px;
+  margin-left: -10px;
+}
+.gallery-item.item-4 {
+  transform: rotate(7deg);
+  z-index: 7;
+  margin-top: -10px;
+  margin-left: 5px;
+}
+.gallery-item.item-5 {
+  transform: rotate(-4deg);
+  z-index: 5;
+  margin-top: 15px;
+  margin-left: -8px;
+}
+.gallery-item.item-6 {
+  transform: rotate(2deg);
+  z-index: 6;
+  margin-top: -5px;
+  margin-left: 12px;
+}
+.gallery-item.item-7 {
+  transform: rotate(-6deg);
+  z-index: 4;
+  margin-top: 8px;
+  margin-left: -15px;
+}
+.gallery-item.item-8 {
+  transform: rotate(4deg);
+  z-index: 7;
+  margin-top: -12px;
+  margin-left: 8px;
+}
+.gallery-item.item-9 {
+  transform: rotate(-1deg);
+  z-index: 5;
+  margin-top: 20px;
+  margin-left: -2px;
+}
+.gallery-item.item-10 {
+  transform: rotate(8deg);
+  z-index: 6;
+  margin-top: -7px;
+  margin-left: 15px;
+}
+.gallery-item.item-11 {
+  transform: rotate(-3deg);
+  z-index: 4;
+  margin-top: 12px;
+  margin-left: -10px;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 600px) {
+  .gallery-grid-container {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+    ); /* 2-3 columns */
+    gap: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .gallery-grid-container {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(220px, 1fr)
+    ); /* 3-4 columns */
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid-container {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    ); /* 4-5 columns */
+    gap: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-main-heading {
+    font-size: 2.2em;
+  }
+  .gallery-sub-heading {
+    font-size: 0.9em;
+    padding: 0 10px;
+  }
+  .gallery-grid-container {
+    padding: 10px;
+    gap: 15px;
+  }
+  .gallery-item {
+    padding: 8px;
+  }
+}
